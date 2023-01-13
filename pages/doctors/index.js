@@ -7,11 +7,14 @@ import DoctorDetails from '../../components/DoctorDetails'
 export default function DoctorsList({ doctorsData }) {
 
     const [doctors, setDoctors] = useState(doctorsData)
+    const [chosenDoctor, setChosenDoctor] = useState()
     const [detailModal, setDetailModal] = useState(true)
 
+    const chooseYourDoctor = (doctor) => {
+        setChosenDoctor(doctor)
+        setDetailModal(true)
+    }
 
-
-    console.log(doctors)
     return (
         <div className={style.container}>
             <Navbar />
@@ -20,11 +23,11 @@ export default function DoctorsList({ doctorsData }) {
             <div className={style.list}>
                 {
                     doctors.map((doctor,i) => {
-                        return <div key={i} onClick={() => setDetailModal(true)} >{`${doctor.lastname}, expert in ${doctor.activity}`}</div>
+                        return <div key={i} onClick={() => chooseYourDoctor(doctor)} >{`${doctor.lastname}, expert in ${doctor.activity}`}</div>
                     })
                 }
             </div>
-            { detailModal && <DoctorDetails setDetailModal={setDetailModal} doctor={{lastname: 'Test', activity:'Indian'}} />}
+            { detailModal && <DoctorDetails setDetailModal={setDetailModal} doctor={chosenDoctor} />}
         </div>
     )
 }

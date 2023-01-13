@@ -1,0 +1,12 @@
+$buttons: #0646ff;
+$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+
+.slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    > div {
+        margin: 10px
+    }
+}

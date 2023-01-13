@@ -1,28 +1,83 @@
 $gradient1: linear-gradient(to right, #0066FF, #1070FF);
 
-.container {
+
+.modal, .yeetModal {
     background: $gradient1;
     position: absolute;
-
-    //Todo fix le scroll pendant animation
-
-    // inset: 0;
-
-    // soit ça soit inset 0
     top: 0;
     height: 100%;
     width: 100%;
-    //
+
+    .top, .bot {
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top {
+        height: 40%;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+
+            > * {
+                flex: 1 1 100%;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .column:nth-child(3) {
+                text-align: right;
+            };
+
+            .main {
+                display: flex;
+                flex-direction: column;
+
+                .profile_pic {
+                    border-radius: 10px;
+    
+                }
+    
+                .lastname, .activity {
+                    color: white;
+                }
+    
+                .lastname {
+                    font-weight: 600;
+                }
+    
+                .activity {
+                    font-size: 1em;
+                    opacity: 0.5;
+                }
+            }
+            
+
+        }
+        
+        .details {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+    .bot {
+        height: 60%;
+        background-color: white;
+    }
+
+}
+
+.modal {
     transform: translateY(100vh);
-    animation: popModalAnim ease 1s forwards;
+    animation: popModalAnim ease 0.7s forwards;
 }
 
 .yeetModal {
-    background: $gradient1;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
     transform-origin: top left;
     animation: yeetModalAnim ease 0.4s forwards;
 }
