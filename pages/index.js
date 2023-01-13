@@ -1,19 +1,9 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Home from '../components/Home'
+import style from '../styles/Home.module.scss'
 
-export default function Home() {
-    return (
-        <>
-            <Head>
-                <title>TopDoc</title>
-                <link rel="icon" href="Pharmacy.svg" type="image/gif" />
-            </Head>
-
-            <div className={styles.container}>
-               TOPDOC
-            </div>
-            <Image src={'/Pharmacy.svg'} alt="logo" width="350px" height="300px"/>
-        </>
-    )
+export default function TopDoc() {
+    return <div className={style.globalContainer}>
+        <Home />
+    </div>
 }

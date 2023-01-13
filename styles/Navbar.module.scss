@@ -1,0 +1,16 @@
+$buttons: #0646ff;
+$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+
+.container {
+  padding: 0 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $gradient1;
+  height: 70px;
+}
+
+.menu {
+    font-size: 1.5em;
+}

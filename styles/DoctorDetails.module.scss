@@ -1,0 +1,46 @@
+$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+
+.container {
+    background: $gradient1;
+    position: absolute;
+
+    //Todo fix le scroll pendant animation
+
+    // inset: 0;
+
+    // soit ça soit inset 0
+    top: 0;
+    height: 100%;
+    width: 100%;
+    //
+    transform: translateY(100vh);
+    animation: popModalAnim ease 1s forwards;
+}
+
+.yeetModal {
+    background: $gradient1;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: top left;
+    animation: yeetModalAnim ease 0.4s forwards;
+}
+
+@keyframes popModalAnim {
+    from {
+        transform: translateY(100vh);
+    }   
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes yeetModalAnim {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-90deg) translate(-2000px, -1000px);
+    }
+}

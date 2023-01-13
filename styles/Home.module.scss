@@ -1,0 +1,13 @@
+$buttons: #0646ff;
+$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+
+.globalContainer {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $gradient1;
+  height: 100%;
+  width: 100%;
+}

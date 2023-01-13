@@ -1,0 +1,31 @@
+$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+
+.globalContainer {
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: $gradient1;
+    height: 100%;
+    width: 100%;
+    
+    .text {
+        color: white;
+        font-size: 2em;
+    }
+
+    .buttonContainer{
+        margin-left: auto;
+
+        .button {
+            color:#0066FF;
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+    
+  }
