@@ -4,6 +4,7 @@ import { BsArrowLeft } from 'react-icons/bs'
 import Link from 'next/link'
 import Image from 'next/image'
 import AvailableSlots from './AvailableSlots'
+import DateScrolling from './DateScrolling'
 
 export default function DoctorDetails({ doctor, setDetailModal }) {
 
@@ -41,12 +42,11 @@ export default function DoctorDetails({ doctor, setDetailModal }) {
                 </div>
             </div>
             <div className={style.bot}>
-                <div>Days</div>
                 <div>
-                    <p>Slots</p>
-                    <div>
-                        <AvailableSlots />
-                    </div>
+                    <DateScrolling />
+                </div>
+                <div>
+                    <AvailableSlots />
                 </div>
             </div>
         </div>

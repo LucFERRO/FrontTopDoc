@@ -1,0 +1,42 @@
+.container {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .header_top_left {
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header_top_right {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            opacity: 0.5;
+
+            .select_month {
+                background: transparent;
+                border: none;
+                width: fit-content;
+                text-align: right;
+        
+                /* for Firefox */
+                -moz-appearance: none;
+                /* for Chrome */
+                -webkit-appearance: none;
+        
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { apiService } from '../services/APIService'
 import style from '../styles/Slots.module.scss'
 
@@ -7,19 +7,17 @@ export default function AvailableSlots() {
 
     useEffect(() => {
         apiService.get('plannings/test/1').then(response => {
-            console.log(response.data)
-            setPlannings(response.data.friday)
+            setPlannings(response.data.monday)
         })
 
     }, [])
 
-console.log(plannings)
 
     if (!plannings) return
     return (
         <div>
             <p>
-                AvailableSlots
+                Available Slots
             </p>
             <div className={style.slots}>
                 {plannings.map((planning,i) => {
