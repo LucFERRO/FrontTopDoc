@@ -47,7 +47,6 @@ export default function DateScrolling() {
         let time = today.split('/')[1]
         setChosenMonth(months[parseInt(date[1])])
         setChosenDay({ date: parseInt(date.split('-')[2]), day: date.split('-')[3] })
-
     }, [])
 
     useEffect( () => {
@@ -63,9 +62,10 @@ export default function DateScrolling() {
             dayList.push(currentMonth.add(i,'day').format('ddd-D').split('-'));
             i = i+1
         }
-        console.log(dayList)
         return dayList
     }
+
+
 
 
 

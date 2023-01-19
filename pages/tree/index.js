@@ -9,7 +9,6 @@ export default function Tree() {
         if (ref.current) {
             const ctx = ref.current.getContext('2d')
             // const turtle = new RealTurtle(ref.current)
-            // console.log(ctx)
             ctx.lineWidth = 1;
             ctx.strokeStyle = "#ee0000";
             ctx.rect(100, 200, 100, 100);

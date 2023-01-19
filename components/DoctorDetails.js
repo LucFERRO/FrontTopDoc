@@ -29,7 +29,7 @@ export default function DoctorDetails({ doctor, setDetailModal }) {
 
                     </div>
                     <div className={style.main}>
-                        <Image className={style.profile_pic} src='/random_indian.jpg' width='100' height='100' />
+                        <Image className={style.profile_pic} src='/random_indian.jpg' width='100px' height='100px' />
                         <p className={style.lastname}>{`Dr. ${doctor.lastname}`}</p>
                         <p className={style.activity}>{`${doctor.activity}`}</p>
                     </div>
