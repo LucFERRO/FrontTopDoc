@@ -1,4 +1,4 @@
-$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+@use "variables" as variables;
 
 .globalContainer {
     padding: 0 3rem;
@@ -6,7 +6,7 @@ $gradient1: linear-gradient(to right, #0066FF, #1070FF);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: $gradient1;
+    background: variables.$gradient1;
     height: 100%;
     width: 100%;
     

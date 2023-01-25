@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { apiService } from '../../services/APIService'
 import style from '../../styles/Doctorslist.module.scss'
 import Navbar from '../../components/Navbar'
@@ -8,7 +8,7 @@ export default function DoctorsList({ doctorsData }) {
 
     const [doctors, setDoctors] = useState(doctorsData)
     const [chosenDoctor, setChosenDoctor] = useState()
-    const [detailModal, setDetailModal] = useState(true)
+    const [detailModal, setDetailModal] = useState(false)
 
     const chooseYourDoctor = (doctor) => {
         setChosenDoctor(doctor)

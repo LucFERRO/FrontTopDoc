@@ -1,18 +1,51 @@
+@use "variables" as variables;
+
 .container {
+    display: flex;
+    position: relative;
+
+    .carousel {
         display: flex;
-        position: relative;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 1rem;
+        padding: 1rem 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
-        .carousel {
+
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .day,
+        .chosen_day {
             display: flex;
-            flex-direction: row;
-            overflow-x: scroll;
-            gap: 1rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 50px;
+            border: 1px solid rgb(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
 
-            .day {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+
+            :nth-child(1) {
+                font-size: 0.8rem;
+            }
+
+            :nth-child(2) {
+                font-weight: 600;
             }
         }
+
+        .chosen_day {
+            background: variables.$blue;
+            color: white;
+        }
+    }
+
 }

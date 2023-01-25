@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react'
-import { apiService } from '../services/APIService'
 import style from '../styles/Carousel.module.scss'
+import dayjs from "dayjs";
+import toObject from 'dayjs/plugin/toObject'
+import relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(toObject)
+dayjs.extend(relativeTime)
+require("dayjs/locale/en");
 
-export default function Carousel({chosenMonth,setChosenMonth, chosenMonthDays, chosenDay, setChosenDay}) {
+export default function Carousel({chosenMonth, chosenDayIndex, setChosenDayIndex}) {
 
-    const chooseMonth = () => {
-
-    }
-    
   if (!chosenMonth) return  
 
-  console.log(chosenMonth)
-
   return (
-    <div onClick={chooseMonth} className={style.container}>
+    <div className={style.container}>
         <div className={style.carousel}>
-            {chosenMonthDays.map(day => <div className={style.day}>
-                <p>{day[0]}</p>
-                <p>{day[1]}</p>
+            {chosenMonth.map((day,i) => <div key={i} onClick={() => setChosenDayIndex(i)} className={i==chosenDayIndex ? style.chosen_day : style.day}>
+                <p>{dayjs(day.date).format('ddd')}</p>
+                <p>{dayjs(day.date).format('D')}</p>
             </div>)}
         </div>
     </div>

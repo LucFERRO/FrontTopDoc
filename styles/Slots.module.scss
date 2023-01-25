@@ -1,12 +1,28 @@
-$buttons: #0646ff;
-$gradient1: linear-gradient(to right, #0066FF, #1070FF);
+@use "variables" as variables;
 
-.slots {
+.slot_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-    > div {
+
+    >div {
         margin: 10px
+    }
+
+    .free_slot,
+    .unavailable_slot {
+        padding: 5px;
+        border-radius: 5px;
+        color: black;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .free_slot {
+        background-color: variables.$blue_opacity;
+    }
+
+    .unavailable_slot {
+        background-color: red;
     }
 }
