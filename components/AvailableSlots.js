@@ -28,27 +28,24 @@ export default function AvailableSlots({ change, setChange, doctorId, chosenMont
     }
 
     const handleVacations = (slots) => {
-        console.log(slots)
-        if (slots != []) return slots
-        console.log('slots vides')
-        return [
-            {
+        if (slots.length) return slots
+        let vacationArray = []
+        for (let i = 0; i < 30; i++) {
+            vacationArray.push({
                 time: 'Vacation',
-                available: 'Test'
-            },
-            {
-                time: 'Vacation',
-                available: 'Test'
-            }
-        ]
+                available: false
+            })
+        }
+
+        return ['Not available today']
     }
 
     return (
         <div>
             <p>Time</p>
             <div className={style.slot_container}>
-                {handleVacations(chosenMonthIndex[chosenDayIndex].slots).map((slot, i) => {
-                    return <div onClick={() => takeAppointement(chosenMonthIndex[chosenDayIndex].date, slot.time)} className={slot.available ? style.free_slot : style.unavailable_slot} key={i}>{slot.time}</div>
+                {handleVacations(chosenMonthIndex[chosenDayIndex].slots).length == 1 ? <div className={style.vacation} >{handleVacations(chosenMonthIndex[chosenDayIndex].slots)[0]}</div> : handleVacations(chosenMonthIndex[chosenDayIndex].slots).map((slot, i) => {
+                    return <div onClick={slot.available ? () => takeAppointement(chosenMonthIndex[chosenDayIndex].date, slot.time) : undefined} className={slot.available ? style.free_slot : style.unavailable_slot} key={i}>{slot.time}</div>
                 })}
             </div>
         </div>
